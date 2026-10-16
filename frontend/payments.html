@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TrendAura payment balance and order refunds." />
+    <title>Payments | TrendAura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/payments.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Trend<span>Aura</span></a>
+      <div class="demo-badge"><span></span> Payment desk</div>
+      <div class="header-links"><a class="settings-link" href="/settings.html" title="Open settings" aria-label="Open settings">&#9881;</a><a class="back-link" href="/">Back to storefront <span aria-hidden="true">&#8599;</span></a></div>
+    </header>
+
+    <main class="payments-main">
+      <section class="payments-intro">
+        <div>
+          <p class="eyebrow">Your payment account</p>
+          <h1>Spend with<br /><em>confidence.</em></h1>
+        </div>
+        <p class="intro-note">Add credit to your available balance, review your orders, and request a refund when something goes wrong.</p>
+      </section>
+
+      <section class="balance-grid" aria-label="Payment balance">
+        <article class="balance-card balance-main"><p class="eyebrow">Available to spend</p><strong id="available-balance">PKR 0</strong><span>Funds available in this browser</span></article>
+        <article class="balance-card balance-action"><p class="eyebrow">Add credit</p><button class="button button-dark" id="add-credit" type="button">Add PKR 5,000 <span aria-hidden="true">+</span></button><span>One click adds 5,000 rupees</span></article>
+      </section>
+
+      <section class="orders-panel">
+        <div class="panel-heading"><div><p class="eyebrow">Your history</p><h2>Orders and refunds</h2></div><span class="live-dot">AI review</span></div>
+        <p class="panel-copy">Refund requests are checked by the refund agent. Requests outside the automatic policy are held for human review.</p>
+        <div class="payment-orders" id="payment-orders" aria-live="polite"></div>
+      </section>
+    </main>
+    <script src="/static/payments.js" type="module"></script>
+  </body>
+</html>

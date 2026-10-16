@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | TrendAura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/payments.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Trend<span>Aura</span></a>
+      <div class="header-links"><span class="settings-link" aria-hidden="true">&#9881;</span><a class="back-link" href="/">Back to storefront <span aria-hidden="true">&#8599;</span></a></div>
+    </header>
+    <main class="settings-main">
+      <section class="settings-panel">
+        <p class="eyebrow">Account / settings</p>
+        <h1>Your<br /><em>workspace.</em></h1>
+        <div class="settings-profile" id="settings-profile" aria-live="polite">Loading account...</div>
+        <div class="admin-setting hidden" id="admin-setting">
+          <p class="eyebrow">Team tools</p>
+          <h2>Refund review</h2>
+          <p>Review AI-prepared refund cases and make the final team decision.</p>
+          <a class="button button-dark" href="/admin-dashboard.html">Open admin dashboard <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </section>
+    </main>
+    <script src="/static/settings.js" type="module"></script>
+  </body>
+</html>

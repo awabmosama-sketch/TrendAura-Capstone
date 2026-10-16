@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refund Review | TrendAura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/payments.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Trend<span>Aura</span></a>
+      <span class="demo-badge"><span></span> Team review</span>
+      <div class="header-links"><a class="settings-link" href="/settings.html" title="Open settings" aria-label="Open settings">&#9881;</a><a class="back-link" href="/">Back to storefront <span aria-hidden="true">&#8599;</span></a></div>
+    </header>
+    <main class="payments-main">
+      <section class="payments-intro">
+        <div><p class="eyebrow">Human in the loop</p><h1>Refunds,<br /><em>ready for review.</em></h1></div>
+        <p class="intro-note">The refund agent has prepared each case. Approve or reject only after reviewing the customer reason and the AI recommendation.</p>
+      </section>
+      <section class="orders-panel">
+        <div class="panel-heading"><div><p class="eyebrow">AI queue</p><h2>Pending decisions</h2></div><button class="clear-button" id="refresh-refunds" type="button">Refresh</button></div>
+        <div class="refund-queue" id="refund-queue" aria-live="polite"></div>
+      </section>
+    </main>
+    <script src="/static/admin-refunds.js" type="module"></script>
+  </body>
+</html>

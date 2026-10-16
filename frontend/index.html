@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TrendAura - considered everyday pieces." />
+    <title>TrendAura | Everyday, considered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="TrendAura home">Trend<span>Aura</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#orders">Orders</a>
+        <a href="/payments.html">Payment demo</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="header-actions">
+        <a class="settings-link" href="/settings.html" title="Open settings" aria-label="Open settings">&#9881;</a>
+        <button class="icon-button" id="account-button" type="button" aria-label="Open account">
+          <span class="icon-person" aria-hidden="true"></span>
+          <span class="account-label">Account</span>
+        </button>
+        <button class="cart-button" id="cart-button" type="button">
+          Bag <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="hero-copy">
+          <p class="eyebrow">New collection / 2026</p>
+          <h1>Good things,<br /><em>well chosen.</em></h1>
+          <p class="hero-text">A quieter edit of pieces made for the way you actually live.</p>
+          <a class="button button-dark" href="#shop">Explore the edit <span aria-hidden="true">&#8599;</span></a>
+        </div>
+        <div class="hero-art" aria-label="Curated clothing collection" role="img">
+          <div class="art-circle art-circle-large"></div>
+          <div class="art-circle art-circle-small"></div>
+          <div class="art-label">THE<br />EVERYDAY<br />EDIT</div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The edit</p>
+            <h2>Made to stay<br /><em>in rotation.</em></h2>
+          </div>
+          <p class="section-note">Thoughtful essentials, selected for their shape, feel, and staying power.</p>
+        </div>
+        <div class="shop-toolbar">
+          <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Product categories">
+            <button class="tab active" type="button" data-category="">All pieces</button>
+          </div>
+          <label class="search-field">
+            <span class="sr-only">Search products</span>
+            <input id="search-input" type="search" placeholder="Search the edit" />
+            <span aria-hidden="true">&#8594;</span>
+          </label>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="empty-state hidden" id="empty-state">Nothing here yet. Try another search.</p>
+      </section>
+
+      <section class="orders-section" id="orders">
+        <div class="section-heading orders-heading">
+          <div>
+            <p class="eyebrow">Your history</p>
+            <h2>Orders, <em>kept close.</em></h2>
+          </div>
+          <p class="section-note">Track your recent purchases and request a return when a piece is not quite right.</p>
+        </div>
+        <div class="orders-list" id="orders-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>TrendAura</p>
+      <p>Everyday, considered.</p>
+      <p>&copy; 2026</p>
+    </footer>
+
+    <div class="overlay hidden" id="overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+      <div class="drawer-header">
+        <div><p class="eyebrow">Your selection</p><h2>Shopping bag</h2></div>
+        <button class="close-button" id="close-cart" type="button" aria-label="Close shopping bag">&times;</button>
+      </div>
+      <div class="cart-content" id="cart-content"></div>
+      <div class="cart-footer" id="cart-footer"></div>
+    </aside>
+
+    <div class="modal hidden" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <button class="close-button modal-close" id="close-account" type="button" aria-label="Close account">&times;</button>
+      <p class="eyebrow">Welcome back</p>
+      <h2 id="account-title">Your account</h2>
+      <p class="modal-copy" id="account-copy">Sign in to keep your bag and check out.</p>
+      <form id="account-form">
+        <label class="form-field hidden" id="name-field">Full name<input name="full_name" type="text" autocomplete="name" /></label>
+        <label class="form-field">Email<input name="email" type="email" autocomplete="email" required /></label>
+        <label class="form-field">Password<input name="password" type="password" autocomplete="current-password" required minlength="8" /></label>
+        <button class="button button-dark full-width" type="submit" id="account-submit">Sign in</button>
+      </form>
+      <button class="text-button" id="account-mode" type="button">Need an account? Create one</button>
+      <button class="text-button hidden" id="sign-out" type="button">Sign out</button>
+      <p class="form-message" id="account-message" role="status"></p>
+    </div>
+
+    <div class="modal hidden checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="close-button modal-close" id="close-checkout" type="button" aria-label="Close checkout">&times;</button>
+      <p class="eyebrow">Almost yours</p>
+      <h2 id="checkout-title">Complete order</h2>
+      <form id="checkout-form">
+        <div class="checkout-options">
+          <label class="payment-option"><input type="radio" name="payment_method" value="cod" checked /> Cash on delivery</label>
+          <label class="payment-option"><input type="radio" name="payment_method" value="bank_transfer" /> Bank transfer</label>
+        </div>
+        <div class="form-grid">
+          <label class="form-field">First name<input name="first_name" required /></label>
+          <label class="form-field">Last name<input name="last_name" required /></label>
+        </div>
+        <label class="form-field">Phone<input name="phone" type="tel" required /></label>
+        <label class="form-field">Street address<input name="street_address" required /></label>
+        <div class="form-grid">
+          <label class="form-field">City<input name="city" required /></label>
+          <label class="form-field">Postal code<input name="postal_code" required /></label>
+        </div>
+        <button class="button button-dark full-width" type="submit">Place order <span aria-hidden="true">&#8599;</span></button>
+      </form>
+      <p class="form-message" id="checkout-message" role="status"></p>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/static/app.js" type="module"></script>
+  </body>
+</html>

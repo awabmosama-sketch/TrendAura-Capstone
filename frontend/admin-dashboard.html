@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | TrendAura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/payments.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Trend<span>Aura</span></a>
+      <span class="demo-badge"><span></span> Admin workspace</span>
+      <div class="header-links"><a class="settings-link" href="/settings.html" title="Open settings" aria-label="Open settings">&#9881;</a><a class="back-link" href="/">Storefront <span aria-hidden="true">&#8599;</span></a></div>
+    </header>
+    <main class="payments-main">
+      <section class="payments-intro"><div><p class="eyebrow">Operations / overview</p><h1>Run the<br /><em>business.</em></h1></div><p class="intro-note">One place for orders, agent decisions, fraud review, and pricing actions.</p></section>
+      <section class="admin-stats" id="admin-stats" aria-live="polite"></section>
+      <section class="admin-tools">
+        <a class="admin-tool" href="/admin-refunds.html"><span class="eyebrow">Agent 1</span><h2>Refund review</h2><span>Approve or reject pending customer requests &#8599;</span></a>
+        <div class="admin-tool"><span class="eyebrow">Agent 3</span><h2>Pricing audit</h2><button class="button button-dark" id="run-pricing" type="button">Run audit <span aria-hidden="true">&#8599;</span></button><p class="form-message" id="pricing-message"></p><div id="pricing-list"><p class="orders-empty">No audit results loaded.</p></div></div>
+        <div class="admin-tool"><span class="eyebrow">Agent 4</span><h2>Fraud flags</h2><div id="fraud-list"><p class="orders-empty">Loading...</p></div></div>
+      </section>
+    </main>
+    <script src="/static/admin-dashboard.js" type="module"></script>
+  </body>
+</html>

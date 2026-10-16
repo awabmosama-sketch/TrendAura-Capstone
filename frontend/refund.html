@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a Refund | TrendAura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/payments.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Trend<span>Aura</span></a>
+      <div class="header-links"><a class="settings-link" href="/settings.html" title="Open settings" aria-label="Open settings">&#9881;</a><a class="back-link" href="/payments.html">Back to payments <span aria-hidden="true">&#8599;</span></a></div>
+    </header>
+    <main class="refund-main">
+      <section class="refund-form-panel">
+        <p class="eyebrow">Customer care / refund request</p>
+        <h1>Tell us what<br /><em>went wrong.</em></h1>
+        <p class="panel-copy">Your request will be reviewed by our refund agent. The agent may approve it automatically or prepare it for a team member to decide.</p>
+        <form id="refund-request-form">
+          <label class="form-field">Order number<input id="order-number" name="order_number" readonly /></label>
+          <label class="form-field">What happened?<textarea name="reason" rows="7" maxlength="500" required placeholder="Describe the issue with your order"></textarea></label>
+          <button class="button button-dark full-width" type="submit">Submit refund request <span aria-hidden="true">&#8599;</span></button>
+          <p class="form-message" id="refund-message" role="status"></p>
+        </form>
+      </section>
+    </main>
+    <script src="/static/refund.js" type="module"></script>
+  </body>
+</html>
